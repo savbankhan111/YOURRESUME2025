@@ -1,0 +1,523 @@
+.sidebar-nav {
+    overflow-y: auto;
+    height: 100%;
+}
+
+img.menu-icom {
+    height: 18px;
+    margin-right: 10px;
+}
+
+.cadidatelist-wrap {
+    padding: 40px 0;
+}
+
+.candidate-list {
+    padding: 14px 14px 0px;
+    margin-bottom: 10px;
+    transition: all 1s ease;
+    overflow: hidden;
+}
+
+.candidate-list:hover {
+    -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    transition: all 1s ease;
+}
+
+.candidate-list .profile-pic {
+    text-align: center;
+}
+
+.candidate-list .profile-pic img {
+    border-radius: 100%;
+}
+
+.candidate-list .profile-detail h3.namec {}
+
+.candidate-list p {
+    font-size: 16px;
+}
+
+.candidate-list .profile-meta {
+    padding: 10px;
+    background: #fbfbfb;
+    margin: 0 -15px;
+}
+
+.candidate-list p.posttitle {
+    font-size: 16px;
+    color: #000;
+}
+
+.candidate-list p.posttitle i {
+    color: #ff4c3a;
+    margin-right: 10px;
+}
+
+.candidate-list h3.namec {
+    font-size: 18px;
+    color: #000;
+    font-weight: 800;
+    margin: 0px;
+}
+
+.candidate-list h3.namec a {
+    color: #000
+}
+
+.candidate-list h3.namec:hover a {
+    color: #ff4c3a
+}
+
+.candidate-list p.info-c {
+    font-size: 16px;
+    color: #666;
+    margin: 8px 0 15px;
+}
+
+.candidate-list .profile-meta p {
+    margin: 0px;
+}
+
+.candidate-list .profile-meta p strong {
+    color: #30ce4b;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.candidate-list .profile-meta p span {
+    color: #666;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.pagination-wrap {
+    margin-top: 50px;
+}
+
+.pagination-wrap .page-link {
+    border-radius: 100%!important;
+    margin: 0 4px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 16px;
+    background: #31a69a;
+    border: none;
+    color: #fff;
+}
+
+.pagination-wrap .page-link:hover {
+    background: #000;
+    color: #fff;
+}
+
+.single-profile-page {
+    padding: 50px 0;
+}
+
+.single-profile-page .profilepic {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.single-profile-page .profilepic img {
+    width: 100%;
+}
+
+.single-profile-page .profildata {
+    text-align: center;
+    padding: 15px 0;
+    margin-bottom: 20px;
+}
+
+.single-profile-page .profildata h3 {
+    font-size: 26px;
+    color: #000;
+    margin-bottom: 0px;
+}
+
+.single-profile-page .profildata h4 {
+    font-size: 18px;
+    color: #3fc5e1;
+    margin-bottom: 0px;
+}
+
+.secsin {
+    padding: 15px;
+    margin-bottom: 20px;
+    background: #fbfbfb;
+}
+
+.secsin h3 {
+    color: #3fc5e1;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+.secsin p {
+    font-size: 15px;
+    color: #000
+}
+
+.experience-list {
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 8px #f1f1f1;
+}
+
+.experience-list .row {
+    align-items: center;
+}
+
+.skilhandling span.badge-skill {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 2px solid #3fc5e1;
+    color: #3fc5e1;
+    border-radius: 30px;
+    margin-right: 9px;
+    font-weight: 600;
+}
+
+.languagesec span.badge-lang {
+    display: inline-block;
+    width: 15%;
+    text-align: center;
+}
+
+.languagesec span.badge-lang b {
+    display: block;
+    font-size: 20px;
+    color: #000;
+}
+
+.single-profile-page .compny-detail h3 {
+    margin: 0px 0 10px;
+    color: #000;
+    font-size: 21px;
+}
+
+.secsin a.del {
+    float: right;
+    color: #ff0000;
+    font-size: 14px;
+}
+
+.secsin a.edits,
+.secsin a.adds {
+    float: right;
+    color: #3fc5e1;
+    font-size: 14px;
+}
+
+.compny-detail p {
+    margin: 0px 0 5px;
+}
+
+.portfololink span {
+    display: block;
+    padding: 8px 15px;
+    border: 2px solid #3fc5e1;
+    color: #3fc5e1;
+    border-radius: 30px;
+    margin-right: 9px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.interviewrecord a {
+    font-size: 16px;
+    color: #3fc5e1;
+}
+
+.table td.custom-width,
+.table th.custom-width {
+    width: 230px;
+    white-space: normal;
+}
+
+.table td.custom-smallwidth,
+.table th.custom-smallwidth {
+    width: 150px;
+    white-space: normal;
+}
+
+.btn-outline-secondary {
+    border-color: #e9ecef!important;
+}
+
+.table.timeslottable.weekdays td,
+.table.timeslottable.weekdays th {
+    text-align: left
+}
+
+.table.timeslottable td,
+.table.timeslottable th {
+    font-size: 13px;
+    padding: 5px;
+}
+
+.table.timeslottable td span,
+.table.timeslottable td a {
+    display: inline-block;
+    margin: 0 3px;
+}
+
+.table.timeslottable td .edit {
+    color: #4caf50
+}
+
+.table.timeslottable td .delete {
+    color: #ff0000
+}
+
+.whitesapce {
+    white-space: normal!important;
+}
+
+.job-details-page .table th,
+.job-details-page .table td {
+    text-align: left;
+    padding: 15px;
+}
+
+.details-page .table td,
+.job-details-page .table td {
+    background: #fff;
+}
+
+.details-page .card,
+.job-details-page .card {
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.details-page .card .bg-blue,
+.job-details-page .card .bg-blue {
+    background-color: #ffff!important;
+    padding-left: 0;
+}
+
+.details-page .card-header .card-title,
+.job-details-page .card .card-header .card-title {
+    color: #3699ff;
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+.details-page .card .table,
+.job-details-page .card .table {
+    margin: 0px;
+}
+
+.table th,
+.table thead th {
+    background: #f0f7ff;
+}
+
+.table tr td img {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+}
+
+a.videolinkbtn {
+    background: #4CAF50;
+    color: #fff;
+    padding: 4px 15px;
+    margin-left: 4px;
+    border-radius: 5px;
+}
+
+a.videolinkbtn:hover {
+    color: #fff;
+}
+
+.themebtnmain {
+    color: #fff;
+    background-color: #3699ff;
+    border: 1px solid #3699ff;
+    padding: 10px 35px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px;
+    box-shadow: 0 10px 20px -10px #3699ff;
+    transition: all 1s ease;
+}
+
+.themebtnmain:hover {
+    color: #fff;
+    ;
+    box-shadow: none;
+    transition: all 1s ease;
+}
+
+.themebtnmainoutline {
+    color: #3699ff;
+    background-color: #fff;
+    border: 1px solid #3699ff;
+    padding: 10px 35px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px;
+    box-shadow: none;
+    transition: all 1s ease;
+}
+
+.themebtnmainoutline:hover {
+    box-shadow: 0 10px 20px -10px #3699ff;
+    transition: all 1s ease;
+}
+
+form label {
+    color: #989eb3;
+}
+
+form .form-group {
+    margin-bottom: 25px;
+}
+
+form select.form-control:not([size]):not([multiple]),
+form .form-control,
+form select,
+form input {
+    height: 45px;
+    border: 2px solid #c5c8d3;
+    border-radius: 6px;
+}
+
+form textarea.form-control,
+form textarea {
+    height: 110px;
+    border: 2px solid #c5c8d3;
+    border-radius: 6px;
+}
+
+form select.form-control:not([size]):not([multiple]):focus,
+form .form-control:focus,
+form select:focus,
+form input:focus,
+form textarea:focus {
+    border: 2px solid #3699ff;
+}
+
+table tr select.form-control:not([size]):not([multiple]),
+table tr .form-control,
+table tr select,
+table tr input {
+    height: 36px;
+}
+
+table tr .btn,
+table tr .btntheme {
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+#main-wrapper .btn-danger {
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+.card .card-header.bg-info {
+    background-color: #3699ff!important;
+}
+
+.userimges {
+    text-align: center;
+    padding: 10px 0 25px;
+}
+
+.userimges .btnwraps {
+    margin: 14px 0 0;
+}
+
+.userimges .imgwraps {
+    width: 220px;
+    height: 220px;
+    border-radius: 100%;
+    margin: 0 auto;
+    border: 7px solid #ccc;
+}
+
+.notificationpage .table-bordered td,
+.notificationpage .table-bordered th {
+    border: 1px solid #dee2e6;
+    font-size: 13px;
+    padding: 7px;
+    vertical-align: middle!important;
+    text-align: left;
+}
+
+.notificationpage .whitspceinhert {
+    white-space: inherit;
+}
+
+.table th,
+.table td {
+    text-align: left;
+}
+
+.profilepagewrap .auth-wrapper .auth-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 25px;
+    max-width: 600px;
+    width: 90%;
+    margin: 3em auto;
+}
+
+.profilepagewrap .auth-wrapper .auth-box img {
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.profilepagewrap .auth-wrapper form .input-group {
+    position: relative;
+}
+
+.profilepagewrap .auth-wrapper form .input-group-prepend {
+    position: absolute;
+    left: 5px;
+    z-index: 9;
+    background: none;
+    top: 10px;
+}
+
+.profilepagewrap .auth-wrapper form .input-group-prepend span {
+    border: none;
+    background: none;
+}
+
+.profilepagewrap .auth-wrapper form input {
+    padding-left: 50px;
+    border-radius: 5px!important;
+}
+
+p.timeslotsitem {
+    padding: 5px;
+    background: #242939;
+    color: #fff;
+    border-radius: 25px;
+    margin: 0 0 5px;
+    font-size: 12px;
+}
+  .pagetile  {   
+    background: #07298e!important; 
+} 
+ 

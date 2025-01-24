@@ -1,0 +1,196 @@
+.left-sidebar.admin-sidebar,
+.left-sidebar.admin-sidebar .sidebar-nav ul,
+.topbar.admin-header .top-navbar .navbar-header {
+    background: #35ADE1 !important;
+}
+
+.left-sidebar.admin-sidebar .sidebar-nav ul .sidebar-item .sidebar-link {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: normal;
+    padding: 16px 25px;
+}
+
+.left-sidebar.admin-sidebar .sidebar-nav ul .sidebar-item .sidebar-link i {
+    color: #fff;
+    font-size: 16px;
+    width: 35px;
+    height: auto;
+    line-height: normal;
+    padding-right: 15px;
+    margin: -4px 0 0;
+}
+
+.left-sidebar.admin-sidebar .sidebar-nav ul .sidebar-item.selected>.sidebar-link,
+.admin-sidebar .sidebar-nav ul .sidebar-item .sidebar-link:hover  {
+    background: #2b3d93;
+    color: #35ADE1;
+}
+
+.left-sidebar.admin-sidebar .sidebar-nav ul .sidebar-item.selected>.sidebar-link i {
+    color: #35ADE1;
+}
+
+.admin-sidebar .sidebar-nav .has-arrow::after {
+    width: 5px;
+    height: 5px;
+    right: 20px;
+}
+
+.left-sidebar.admin-sidebar .sidebar-nav ul .sidebar-item .first-level .sidebar-link {
+    padding-left: 30px;
+}
+
+.left-sidebar.admin-sidebar {
+    padding-top: 80px;
+}
+
+.left-sidebar.admin-sidebar .sidebar-nav ul .sidebar-item>.sidebar-link {
+    border-left: 3px solid transparent;
+}
+
+.left-sidebar.admin-sidebar .sidebar-nav ul .sidebar-item.selected>.sidebar-link {
+    border-color: #3699ff;
+}
+
+.admin-header.topbar .top-navbar .navbar-header .navbar-brand {
+    width: auto;
+    display: inline-block;
+}
+
+.admin-header.topbar .top-navbar .sidebartoggler {
+    padding: 0 15px;
+    float: right;
+    color: #fff;
+}
+
+.admin-header.topbar #navbarSupportedContent {
+    background: #35ADE1!important;
+    box-shadow: 0 0 40px 0 rgba(82, 63, 105, .1);
+}
+
+.admin-header.topbar {
+    background: #35ADE1!important;
+}
+
+.admin-header.topbar .profile-menu .rounded-circle {
+    width: 45px;
+    height: 45px;
+    margin-left: 15px;
+}
+
+.admin-header.topbar .profile-menu .dropdown-divider {
+    display: none;
+}
+
+.admin-header.topbar .navbar-nav .profile-menu .nav-link {
+    color: #fff !important;
+}
+
+/* .admin-header.topbar .top-navbar .navbar-header .navbar-brand .logo-icon {
+    margin: 0 0 0 60px;
+} */
+
+.mini-sidebar .navbar-brand {
+    display: none!important;
+}
+
+.footer {
+    text-align: right;
+}
+
+.page-wrapper .page-breadcrumb .page-title {
+    margin: 0 0 20px;
+}
+
+.page-wrapper .container-fluid {
+    padding: 0 24px;
+}
+
+.dashboard-page .card {
+    background: #fff;
+}
+
+.dashboard-page .card table tr:nth-child(2n+2) {
+    background: #fff;
+}
+
+.dashboard-page .card table {
+    border: none
+}
+
+.dashboard-page .card .table td,
+.dashboard-page .card .table th {
+    padding: 10px;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    font-size: 15px;
+    text-align: left;
+}
+
+.dashboard-page .card .table td .badge {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 100%;
+}
+
+.dashboard-page .card .card-title {
+    margin: 0px;
+    color: #000;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.dashboard-page .box {
+    background: linear-gradient(to right, #3699ff, #2b3d93);
+    border-radius: 10px 10px 0 0;
+}
+
+.page-wrapper {
+    background: #eaf1f7;
+}
+
+.dashboard-page .dashboard-details-card .card {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 30px 0 rgba(82, 63, 105, .05);
+}
+
+.dashboard-details-card .card .card-body {
+    padding: 15px;
+}
+
+.dashboard-details-card .card .card-body .card-title {
+    margin: 0;
+    color: #3f4254;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.dashboard-details-card .card .table {
+    border: 0;
+    margin: 0 0 10px;
+}
+
+.dashboard-details-card .card .table td {
+    border: 0;
+    padding: 6px 15px;
+    text-align: left;
+    font-size: 14px;
+    background: #fff;
+}
+
+.dashboard-details-card .card .table td:last-child {
+    text-align: right;
+}
+
+.dashboard-details-card .card .table td .badge {
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 3px 5px;
+}
