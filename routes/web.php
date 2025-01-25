@@ -29,7 +29,6 @@ Route::get('terms-conditions', function(){
 	return view('terms_conditions');
 });
 
-Route::get('/', [BreadcrumbController::class, 'showPage']);
 
 Route::get("/page", 'BreadcrumbController@showPage');
 
@@ -121,12 +120,12 @@ Route::namespace('Admin')->name('admin.')->group(function () {
 		Route::get("/import/school", 'csvImportExport@importSchool')->name("importSchool");
 		Route::put("/import/school", 'csvImportExport@putImportSchool')->name("putImportSchool");
 		
-		Route::get("/plans", 'PlanController@index')->name('plans');
+		Route::get("/plans/{status}", 'PlanController@index')->name('plans');
 		//Route::get("/plan-detail/{plan}", 'PlanController@planDetails')->name("planDetails");
 		Route::get("/plan-add", 'PlanController@addPlan')->name("addPlan");
 		Route::put("/plan-store", 'PlanController@storePlan')->name("storePlan");
 		Route::get("/plan-edit/{plan}", 'PlanController@editPlan')->name("editPlan");		
-			Route::get("/plan-detail/{plan}", 'PlanController@detailsPlan')->name("detailsPlan");		
+		Route::get("/plan-detail/{plan}", 'PlanController@detailsPlan')->name("detailsPlan");		
 		Route::put("/plan-update/{plan}", 'PlanController@updatePlan')->name("updatePlan");
 		Route::get("/plan-update-status/{plan}", 'PlanController@updateStatusPlan')->name("updateStatusPlan");
 		

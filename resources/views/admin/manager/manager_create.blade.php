@@ -1,7 +1,9 @@
 @extends('layouts.auth')
 @section('page_title',"Manager Add")
-@section('page_name',"Active Manager List")
-@section('page_link',url("admin/manager-list?status=active"))
+@section('page_name1',"Dashboard")
+@section('page_link1',url("admin/dashboard"))
+@section('page_name2',"Manager List")
+@section('page_link2',url("admin/manager-list"))
 @section('content')
 
      <div class="container-fluid">
@@ -43,7 +45,7 @@
                                 <div class="col-md-6">
                                   <div class="form-group">
                                       <label for="">Contact number</label>
-                                      <input value="" type="text" name="contact_no" class="form-control" required >
+                                      <input value="" type="number" name="contact_no" class="form-control" required >
                                   </div>
                                 </div>
 								

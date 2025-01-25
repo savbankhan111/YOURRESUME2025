@@ -750,15 +750,45 @@
         <div class="page-breadcrumb">
             <div class="row">
                 <div class="col-12   no-block align-items-center">
-                    <h4 class="page-title">@yield('page_title') <a class="float-right pageurl" href="@yield('page_link')">@yield('page_name')</a></h4>
-                    <div class="ml-auto text-right">
-                        <nav aria-label="breadcrumb">
-
-                        </nav>
-                    </div>
+                    <h4 class="page-title"  style="color: #000">@yield('page_title')</h4>
+      
                 </div>
             </div>
         </div>
+
+
+        
+    {{-- Breadcrumb logic --}}
+
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-12 no-block align-items-center">
+            <h4 class="page-title">
+                {{-- Page link 1 --}}
+                @if(!View::hasSection('page_link1'))
+                    {{-- Fallback value for page_link1 --}}
+                    <a class="pageurl" href="{{ url('admin/dashboard') }}">Dashboard</a>
+                @else
+                    <a class="pageurl" href="@yield('page_link1')">@yield('page_name1')</a>
+                @endif
+                
+                {{-- Page link 2 --}}
+                @if(View::hasSection('page_link2')) /
+                    <a class="pageurl" href="@yield('page_link2')">@yield('page_name2')</a>
+                @endif
+                
+                {{-- Page title --}}
+                @if(View::hasSection('page_title'))
+                    / @yield('page_title')
+                @endif
+            </h4>
+        </div>
+    </div>
+</div>
+
+
+    
+    
         <!-- ============================================================== -->
         <!-- End Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->

@@ -1,7 +1,10 @@
 @extends('layouts.auth')
 @section('page_title',"Plan Add")
-@section('page_name',"Plan List")
-@section('page_link',url("admin/plans"))
+@section('page_name1',"Dashboard")
+@section('page_link1',url("admin/dashboard"))
+@section('page_name2',"Plan List")
+@section('page_link2',url("admin/plans/all"))
+
 @section('content')
 
      <div class="container-fluid">

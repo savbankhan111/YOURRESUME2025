@@ -1,7 +1,9 @@
 @extends('layouts.auth')
 @section('page_title',"Employer Add")
-@section('page_name',"Employer List")
-@section('page_link',url("admin/employer-list"))
+@section('page_name1',"Dashboard")
+@section('page_link1',url("admin/dashboard"))
+@section('page_name2',"Employer List")
+@section('page_link2',url("admin/employer-list"))
 @section('content')
 
      <div class="container-fluid">
@@ -48,7 +50,7 @@
                                 <div class="col-md-6">
                                   <div class="form-group">
                                       <label for="">Contact number *</label>
-                                      <input value="" type="text" name="phone_number" class="form-control" required >
+                                      <input value="" type="number" name="phone_number" class="form-control" required >
                                   </div>
                                 </div>
                                 <div class="col-md-6">

@@ -26,23 +26,43 @@ use Illuminate\Support\Facades\Validator;
 class UsersListController extends Controller
 {
 
+    // public function userListBy(Request $request, $name, UserService $emp)
+    // {
+       
+    //     $candidates = $emp->empList($request, $name);
+    //     $view = 'admin/userlist/users_list';
+    //     //where('status', 'active')->
+    //     $option = 'direct';
+    //     if ($name == 'non-student') {
+    //         $option = 'non';
+    //     }
+    //     $schools = School::where('school_type', $option)->get();
+    //     return view($view)
+    //         ->with([
+    //             'candidates' => $candidates->paginate(30),
+    //             'roles' => Role::all(),
+    //             'schools' => $schools
+    //         ]);
+    // }
     public function userListBy(Request $request, $name, UserService $emp)
-    {
-        $candidates = $emp->empList($request, $name);
-        $view = 'admin/userlist/users_list';
-        //where('status', 'active')->
-        $option = 'direct';
-        if ($name == 'non-student') {
-            $option = 'non';
-        }
-        $schools = School::where('school_type', $option)->get();
-        return view($view)
-            ->with([
-                'candidates' => $candidates->paginate(30),
-                'roles' => Role::all(),
-                'schools' => $schools
-            ]);
-    }
+{
+    // Get candidates list using empList
+    $candidates = $emp->empList($request, $name);
+
+    // Determine school type based on user type
+    $option = ($name == 'non-student') ? 'non' : 'direct';
+
+    // Fetch schools based on type
+    $schools = School::where('school_type', $option)->get();
+// dd($candidates);
+    // Return view with data
+    return view('admin/userlist/users_list', [
+        'candidates' => $candidates->paginate(30), // Paginate the results
+        'roles' => Role::all(),
+        'schools' => $schools,
+    ]);
+}
+
 
     public function userDetails(User $user)
     {

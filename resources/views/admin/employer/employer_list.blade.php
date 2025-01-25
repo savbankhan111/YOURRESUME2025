@@ -1,5 +1,6 @@
 @extends('layouts.auth')
 @section('page_title','List of Employer')
+
 @section('content')
 
     <!-- Container fluid  -->

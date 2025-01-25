@@ -1,5 +1,9 @@
 @extends('layouts.auth')
 @section('page_title','Manager Details')
+@section('page_name1',"Dashboard")
+@section('page_link1',url("admin/dashboard"))
+@section('page_name2',"Manager List")
+@section('page_link2',url("admin/manager-list"))
 @section('content')
     <!-- Container fluid  -->
     <!-- ============================================================== -->

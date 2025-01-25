@@ -10,6 +10,13 @@
     border-radius: 0px
 }
 
+.page-title {
+    color:#0E3F9B;
+}
+
+
+
+
 .topbar .dropdown-menu .with-arrow>span {
     transform: rotate(45deg);
     -ms-transform: rotate(45deg);
@@ -266,6 +273,7 @@ img {
 }
 
 svg:not(:root) {
+    height: 10px;
     overflow: hidden
 }
 

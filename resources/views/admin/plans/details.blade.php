@@ -1,5 +1,9 @@
 @extends('layouts.auth')
 @section('page_title','Plan Details')
+@section('page_name1',"Dashboard")
+@section('page_link1',url("admin/dashboard"))
+@section('page_name2',"Plan List")
+@section('page_link2',url("admin/plans/all"))
 @section('content')
     <!-- Container fluid  -->
     <!-- ============================================================== -->
@@ -30,7 +34,13 @@
                 <tbody>
                 <tr>
 					 <td>{{$user->plan_name}}</td>
-                    <td>{{$user->detail}}</td>
+                     <td style="max-width: 200px; overflow: hidden; white-space: pre-wrap; word-wrap: break-word;">
+                        <div id="user-detail" style="white-space: pre-line;">
+                            {{$user->detail}}
+                        </div>
+                    </td>
+                    
+                    
                    				
                   
                 </tr>
@@ -77,5 +87,26 @@
 <script> 
 $(document).ready(function(){
 });
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+        let detailElement = document.getElementById('user-detail');
+        let text = detailElement.innerHTML.trim();  // Remove any leading/trailing spaces
+        let words = text.split(/\s+/);  // Split the text by any whitespace
+        
+        let formattedText = '';
+        
+        // Loop through words and add a <br> after every 20 words
+        for (let i = 0; i < words.length; i++) {
+            formattedText += words[i] + ' ';
+            if ((i + 1) % 20 === 0) {
+                formattedText += '<br>';
+            }
+        }
+        
+        // Remove trailing space and update the content with formatted text
+        detailElement.innerHTML = formattedText.trim();
+    });
+
 </script>	
 @endsection

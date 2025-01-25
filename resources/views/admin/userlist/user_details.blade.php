@@ -1,9 +1,30 @@
 @extends('layouts.auth')
 
+
+
 @if($user->roles[0]->id == 1) 
+
+
 	@section('page_title','Student Details')
+    @section('page_name', "Student Detail")
+    @section('page_link1', url("admin/dashboard"))
+    @section('page_name1', "Dashboard")
+
+    @if($user->student->school->school_type == 'direct')  
+    @section('page_link2', url("admin/users-list/student"))
+    @section('page_name2', "List of Student")
+@else
+    @section('page_link2', url("admin/users-list/non-student"))
+    @section('page_name2', "List of Non-Student")
+@endif
+
+
 @else 
-	 @section('page_title','Professional Details')
+@section('page_title','Professional Details')  
+@section('page_link1',url("admin/dashboard"))
+@section('page_name1',"Dashboard")
+@section('page_link2',url("admin/users-list/professional"))
+@section('page_name2',"List of Professional")
 @endif
 @section('content')
     <!-- Container fluid  -->

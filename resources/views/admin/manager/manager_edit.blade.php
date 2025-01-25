@@ -1,7 +1,10 @@
 @extends('layouts.auth')
 @section('page_title',"Manager Edit")
-@section('page_name',"Manager Detail")
-@section('page_link',route("admin.managerDetails", $user->id))
+@section('page_name1',"Dashboard")
+@section('page_link1',url("admin/dashboard"))
+@section('page_name2',"Manager List")
+@section('page_link2',url("admin/manager-list"))
+
 @section('content')
 
      <div class="container-fluid">
@@ -43,7 +46,7 @@
                                 <div class="col-md-6">
                                   <div class="form-group">
                                       <label for="">Contact number</label>
-                                      <input value="{{$user->userInfo->contact_no}}" type="text" name="contact_no" class="form-control" required >
+                                      <input value="{{$user->userInfo->contact_no}}" type="number" name="contact_no" class="form-control" required >
                                   </div>
                                 </div>
 								

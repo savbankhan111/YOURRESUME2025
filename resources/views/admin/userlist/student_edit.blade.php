@@ -42,7 +42,7 @@
                                 <div class="col-md-6">
                                   <div class="form-group">
                                       <label for="">Phone *</label>
-                                      <input value="{{$user->userInfo->contact_no}}" type="text" name="contact_no" class="form-control" required >
+                                      <input value="{{$user->userInfo->contact_no}}" type="number" name="contact_no" class="form-control" required >
                                   </div>
                                 </div>
 								

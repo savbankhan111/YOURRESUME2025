@@ -17,15 +17,33 @@ use Illuminate\Support\Facades\Validator;
 class PlanController extends Controller
 {
 
-    public function index()
-    {
-        $view = 'admin/plans/plan_list';
-        return view($view)
-            ->with([
-                'plans' => SubscriptionPlan::paginate(30)
-            ]);
-    }
-
+  public function index($name)
+  {
+    
+      // Default view
+      $view = 'admin/plans/plan_list';
+  
+      // Query to fetch SubscriptionPlans
+      $plansQuery = SubscriptionPlan::query();
+  
+      // Apply filter based on the $name parameter
+      if ($name == 'active') {
+          // Filter for active plans (status = 1)
+          $plansQuery->where('status', 1);
+      } elseif ($name == 'deactivate') {
+       
+          $plansQuery->where('status', 0);
+      } // No filter needed for 'all'
+  
+      // Get the paginated result
+      $plans = $plansQuery->paginate(30);
+  
+      // Return the view with the filtered plans
+      return view($view, [
+          'plans' => $plans
+      ]);
+  }
+  
     public function planDetails($pid)
     {
 		$plan = SubscriptionPlan::where('id',$pid)->get();

@@ -44,7 +44,7 @@
                                 <div class="col-md-6">
                                   <div class="form-group">
                                       <label for="">Phone *</label>
-                                      <input value="{{$user->contact_no}}" type="text" name="contact_no" class="form-control" required >
+                                      <input value="{{$user->contact_no}}" type="number" name="contact_no" class="form-control" required >
                                   </div>
                                 </div>
 								
@@ -66,7 +66,7 @@
 <div class="col-md-12">
                                   <div class="form-group">
                                       <label for="">Address</label>
-                                      <input value="{{$user->address}}" name="address" type="text" class="form-control">
+                                      <input value="{{$user->address}}" name="address" type="text" class="form-control" required>
                                   </div>
                                           </div>
 
@@ -74,7 +74,7 @@
 								<div class="col-md-6">
                                   <div class="form-group">
                                       <label for="">Country</label>
-									  <select name="country" class="form-control">
+									  <select name="country" class="form-control" required>
 									  @if(sizeof($country) > 0)
 									   @foreach($country as $cu)
 								        <option value="{{$cu->id}}" @if($user->country == $cu->id) selected @endif >{{$cu->name}}</option>
@@ -86,7 +86,7 @@
 								<div class="col-md-6">
                                   <div class="form-group">
                                       <label for="">State *</label>
-									  <select name="state" class="form-control">
+									  <select name="state" class="form-control" required>
 									  @if(sizeof($state) > 0)
 									   @foreach($state as $st)
 								        <option required value="{{$st->id}}" @if($user->state == $st->id) selected @endif >{{$st->name}}</option>
@@ -98,14 +98,14 @@
 								<div class="col-md-6">
                                   <div class="form-group">
                                       <label for="">City</label>
-                                      <input value="{{$user->city}}" type="text" name="city" class="form-control">
+                                      <input value="{{$user->city}}" type="text" name="city" class="form-control" required>
                                   </div>
                                 </div>
 			
 			<div class="col-md-6">
                                   <div class="form-group">
                                       <label for="">Zip Code</label>
-                                      <input value="{{$user->zip_code}}" type="text" name="zip_code" class="form-control" >
+                                      <input value="{{$user->zip_code}}" type="text" name="zip_code" class="form-control"required>
                                   </div>
                                 </div>
 								<div class="col-md-12">

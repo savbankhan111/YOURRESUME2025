@@ -1,7 +1,27 @@
 @extends('layouts.auth')
-@section('page_title',"User Edit")
-@section('page_name',"User Detail")
-@section('page_link',route("admin.userDetails", $user->id))
+
+
+
+@if($user->roles[0]->id == 1)
+    @section('page_title', "Student Edit")
+    @section('page_name', "Student Detail")
+    @section('page_link1', url("admin/dashboard"))
+    @section('page_name1', "Dashboard")
+    @section('page_link2', url("admin/users-list/student"))
+    @section('page_name2', "List of Student")
+@elseif($user->roles[0]->id == 3)
+    @section('page_title', "Professional Edit")
+    @section('page_name', "Professional Detail")
+    @section('page_link1', url("admin/dashboard"))
+    @section('page_name1', "Dashboard")
+    @section('page_link2', url("admin/users-list/professional"))
+    @section('page_name2', "List of Professional")
+    @else
+    @section('page_title', "User Edit")
+@section('page_name', "User Detail")
+@section('page_link', route("admin.userDetails", $user->id))
+@endif
+
 @section('content')
 
      <div class="container-fluid">
@@ -63,7 +83,7 @@
                                 <div class="col-md-6">
                                   <div class="form-group">
                                       <label for="">Phone *</label>
-                                      <input value="{{$user->userInfo->contact_no}}" type="text" name="contact_no" class="form-control" required >
+                                      <input value="{{$user->userInfo->contact_no}}" type="number" name="contact_no" class="form-control" required >
                                   </div>
                                 </div>
 								

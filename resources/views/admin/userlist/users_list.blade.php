@@ -88,9 +88,9 @@
                                          <tr>
                                              <td> 
 											 @if($cand->image)
-											  <img width="100" height="100" src="{{url('public/uploads/profile/'.$cand->image)}}" alt="">	 
+											  <img width="80" height="80" src="{{url('public/uploads/profile/'.$cand->image)}}" alt="">	 
 											 @else
-											  <img width="100" height="100" src="{{url('/images/user-default.png')}}" alt="">	 
+											  <img width="80" height="80" src="{{url('/images/user-default.png')}}" alt="">	 
 											 @endif	 
 											 </td>
 
