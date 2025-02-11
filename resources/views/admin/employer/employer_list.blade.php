@@ -66,7 +66,7 @@
                                             </td>
                                             <td><a class="btn btntheme" href="{{route('admin.editEmployer', $cand->id)}}">Edit</a>  <a class="btn btntheme" href="{{route('admin.detailsEmployer', $cand->id)}}">Detail</a>
                                               @if($cand->status != 'deactivate')
-											   <a class="btn btn-danger" href="{{route("admin.changeUserStatus", $cand->id)}}" onclick="return confirm('Are you sure?')" ><i class="fa fa-times"></i></a>
+											   <a class="btn btn-danger" href="{{route("admin.changeUserStatus", $cand->id)}}" onclick="return confirm('Are you sure?')" ><i class="fa fa-trash-o"></i></a>
 									            @endif
                                            
                                          </tr>

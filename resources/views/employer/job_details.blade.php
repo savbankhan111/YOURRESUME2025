@@ -1,5 +1,6 @@
 @extends('layouts.school')
 @section('page_title','User Details')
+
 @section('content')
     <!-- Container fluid  -->
     <!-- ============================================================== -->

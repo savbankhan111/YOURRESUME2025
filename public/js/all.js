@@ -1752,16 +1752,43 @@ $(function() {
     //****************************
     /* This is for sidebartoggler*/
     //****************************
-    $('.sidebartoggler').on("click", function() {
-        $("#main-wrapper").toggleClass("mini-sidebar");
-        if ($("#main-wrapper").hasClass("mini-sidebar")) {
-            $(".sidebartoggler").prop("checked", !0);
-            $("#main-wrapper").attr("data-sidebartype", "mini-sidebar");
-        } else {
-            $(".sidebartoggler").prop("checked", !1);
-            $("#main-wrapper").attr("data-sidebartype", "full");
-        }
-    });
+    // $('.sidebartoggler').on("click", function() {
+    //     $("#main-wrapper").toggleClass("mini-sidebar");
+    //     if ($("#main-wrapper").hasClass("mini-sidebar")) {
+    //         $(".sidebartoggler").prop("checked", !0);
+    //         $("#main-wrapper").attr("data-sidebartype", "mini-sidebar");
+    //     } else {
+    //         $(".sidebartoggler").prop("checked", !1);
+    //         $("#main-wrapper").attr("data-sidebartype", "full");
+    //     }
+    // });
+
+    $(document).ready(function() {
+    
+      if (localStorage.getItem("sidebarType") === "mini-sidebar") {
+          $("#main-wrapper").addClass("mini-sidebar");
+          $(".sidebartoggler").prop("checked", true);
+          $("#main-wrapper").attr("data-sidebartype", "mini-sidebar");
+      }
+  
+ 
+      $('.sidebartoggler').on("click", function() {
+          $("#main-wrapper").toggleClass("mini-sidebar");
+  
+          if ($("#main-wrapper").hasClass("mini-sidebar")) {
+              $(".sidebartoggler").prop("checked", true);
+              $("#main-wrapper").attr("data-sidebartype", "mini-sidebar");
+          
+              localStorage.setItem("sidebarType", "mini-sidebar");
+          } else {
+              $(".sidebartoggler").prop("checked", false);
+              $("#main-wrapper").attr("data-sidebartype", "full");
+           
+              localStorage.setItem("sidebarType", "full");
+          }
+      });
+  });
+  
 });
 // Copyright 2006 Google Inc.
 //

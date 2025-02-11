@@ -60,7 +60,7 @@
 											  <a class="btn btntheme" href="{{route("admin.editManager", $cand->id)}}">Edit</a>
 
                                             @if($cand->status != 'deactivate')
-											   <a class="btn btn-danger" href="{{route("admin.changeUserStatuss", $cand->id)}}" onclick="return confirm('Are you sure?')" ><i class="fa fa-times"></i></a>
+											   <a class="btn btn-danger" href="{{route("admin.changeUserStatuss", $cand->id)}}" onclick="return confirm('Are you sure?')" ><i class="fa fa-trash-o"></i></a>
 									            @endif											 </td>
 
 

@@ -1,5 +1,5 @@
-<aside class="left-sidebar" data-sidebarbg="skin5">
-    <!-- Sidebar scroll-->
+<aside class="left-sidebar  admin-sidebar" data-sidebarbg="skin5">
+  
     <div class="scroll-sidebar">
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
@@ -18,3 +18,4 @@
     </div>
     <!-- End Sidebar scroll-->
 </aside>
+

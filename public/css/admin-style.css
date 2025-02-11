@@ -24,8 +24,8 @@
 
 .left-sidebar.admin-sidebar .sidebar-nav ul .sidebar-item.selected>.sidebar-link,
 .admin-sidebar .sidebar-nav ul .sidebar-item .sidebar-link:hover  {
-    background: #2b3d93;
-    color: #35ADE1;
+    background: #35ADE1;
+    color: #fff;
 }
 
 .left-sidebar.admin-sidebar .sidebar-nav ul .sidebar-item.selected>.sidebar-link i {

@@ -49,7 +49,7 @@
                                              <td><a class="btn btntheme" href="{{route("admin.editPlan", $plan->id)}}">Edit</a>
                                              <a class="btn btntheme" href="{{route("admin.detailsPlan", $plan->id)}}">Details</a>
                                               @if($plan->status != '0')
-											   <a class="btn btn-danger" href="{{route("admin.updateStatusPlan", $plan->id)}}" onclick="return confirm('Are you sure?')" ><i class="fa fa-times"></i></a>
+											   <a class="btn btn-danger" href="{{route("admin.updateStatusPlan", $plan->id)}}" onclick="return confirm('Are you sure?')" ><i class="fa fa-trash-o"></i></a>
 									            @endif
 									            </td>
                                          </tr>

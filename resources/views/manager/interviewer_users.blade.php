@@ -95,8 +95,9 @@
 											  </div>
 											  <!-- Modal body -->
 											  <div class="modal-body">
-											  <form method="POST" action="{{ route('updateIVideo', $interviewerUser->id)}}" class="form-horizontal m-t-20" enctype="multipart/form-data">
-												<input name="_method" type="hidden" value="PUT">
+                                             
+											  <form method="POST" action="{{ url('ivideo-update', $interviewerUser->id)}}" class="form-horizontal m-t-20" enctype="multipart/form-data">
+											
 																@csrf	
 															<div class="row">				
 																<div class="col-md-12">

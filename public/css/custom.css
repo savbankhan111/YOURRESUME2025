@@ -36,7 +36,6 @@ img.menu-icom {
     border-radius: 100%;
 }
 
-.candidate-list .profile-detail h3.namec {}
 
 .candidate-list p {
     font-size: 16px;
@@ -511,7 +510,7 @@ table tr .btntheme {
 
 p.timeslotsitem {
     padding: 5px;
-    background: #242939;
+    background: #0E3F9B;
     color: #fff;
     border-radius: 25px;
     margin: 0 0 5px;

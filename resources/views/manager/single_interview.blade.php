@@ -1,5 +1,13 @@
 @extends('layouts.all.crm')
 @section('page_title','Interview Details')
+
+
+
+@section('page_name1',"Dashboard")
+@section('page_link1',route("employer.dashbords"))
+
+@section('page_name2',"Interviews")
+@section('page_link2',route("getInterviewerList"))
 @section('content')
     <!-- Container fluid  -->
     <!-- ============================================================== -->

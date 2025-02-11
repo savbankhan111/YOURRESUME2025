@@ -13,7 +13,7 @@
         <div class="btn-right text-right">
         <a class="btn btntheme" href="{{route('admin.editEmployer', $user->id)}}">Edit</a>  
                                               @if($user->status != 'deactivate')
-											   <a class="btn btn-danger" href="{{route("admin.changeUserStatus", $user->id)}}" onclick="return confirm('Are you sure?')" ><i class="fa fa-times"></i></a>
+											   <a class="btn btn-danger" href="{{route("admin.changeUserStatus", $user->id)}}" onclick="return confirm('Are you sure?')" ><i class="fa fa-trash-o"></i></a>
 									            @endif
 {{--        user details--}}</div>
 <br>

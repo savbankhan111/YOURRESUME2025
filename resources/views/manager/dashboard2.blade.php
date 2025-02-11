@@ -1,6 +1,6 @@
 
 @extends('layouts.all.crm')
-@section('page_title','Interviews')
+@section('page_title','Dashboard')
 @section('content')
 
     <!-- Container fluid  -->

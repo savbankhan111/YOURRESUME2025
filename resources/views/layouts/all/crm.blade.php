@@ -6,7 +6,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('page_title')</title>
+ 
+
+    
+    
       <link rel="icon" type="image/png" href="{{ asset('images/fev.png')}}"/>
+   
 <link rel="icon" type="image/png" href="{{ asset('images/fev.png')}}"/>
     <!-- Custom CSS -->
     <link href="{{ asset('css/all.css') }}" rel="stylesheet">
@@ -92,6 +97,37 @@
                 </div>
             </div>
         </div>
+        <div class="page-breadcrumb">
+            <div class="row">
+                <div class="col-12 no-block align-items-center">
+                    <h4 class="page-title">
+                        {{-- Page link 1 --}}
+                      
+                        @php
+                        $role = Auth::user()->roles->first();
+                    @endphp
+                    
+                    @if(Auth::check() && $role && $role->roles == 'employer')
+                        <a class="pageurl" href="{{ route('employer.dashbords') }}">Dashboard</a>
+                    @elseif(Auth::check() && $role && $role->roles == 'interviewer_manager')
+                        <a class="pageurl" href="{{ url('interviewsdata') }}">Dashboard</a>
+                    @endif
+                    
+
+                        {{-- Page link 2 --}}
+                        @if(View::hasSection('page_link2')) /
+                            <a class="pageurl" href="@yield('page_link2')">@yield('page_name2')</a>
+                        @endif
+                        
+                        {{-- Page title --}}
+                        @if(View::hasSection('page_title'))
+                            / @yield('page_title')
+                        @endif
+                    </h4>
+                </div>
+            </div>
+        </div>
+        
         <!-- ============================================================== -->
         <!-- End Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->

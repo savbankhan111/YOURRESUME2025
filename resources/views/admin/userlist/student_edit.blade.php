@@ -65,7 +65,7 @@
                                   <div class="form-group">
                                       <label for="">ID Card</label>
 									  @if($user->student->school_proff_id)
-									   <img width="100" height="100" src="{{url('public/uploads/profile/'.$user->student->school_proff_id)}}" alt="">
+									   <img width="100" height="100" src="{{asset('public/uploads/profile/'.$user->student->school_proff_id)}}" alt="">
 									  @endif
                                        <input value="" type="file" name="school_proff_id" class="form-control">
                                   </div>

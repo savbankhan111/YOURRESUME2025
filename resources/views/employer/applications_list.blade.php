@@ -43,7 +43,7 @@
 
                                                     <select id="status" name="status" class="form-control ">
                                                         <option value="">All</option>
-                                                        @foreach(config("constants.status") as $status)
+                                                        @foreach(config("constants.status",[]) as $status)
 														<option value="{{$status}}" @if($status == Request::get('status')) selected @endif >{{$status}}</option>
                                                    		@endforeach
                                                     </select>
@@ -67,7 +67,7 @@
 													<select id="type_of_degree" name="type_of_degree" class="form-control ">
 
 														<option value="">All</option>
-														@foreach(config("constants.degree") as $degree)
+														@foreach(config("constants.degree",[]) as $degree)
 															<option value="{{$degree}}" @if($degree == Request::get('type_of_degree')) selected @endif >{{$degree}}</option>
 
 														@endforeach
@@ -80,7 +80,7 @@
 													<label for="">Experience</label>
 													<select id="years_of_experience" name="years_of_experience" class="form-control ">
 														<option value="">All</option>
-														@foreach(config("constants.experiences") as $exp)
+														@foreach(config("constants.experiences",[]) as $exp)
 														<option value="{{$exp}}" @if($exp == Request::get('years_of_experience')) selected @endif >{{$exp}}</option>
 														@endforeach
 													</select>
@@ -122,7 +122,7 @@
 													<label for="">Position</label>
 													<select id="position_held" name="position_held" class="form-control ">
 														<option value="">All</option>
-													@foreach(config("constants.position") as $pos)
+													@foreach(config("constants.position",[]) as $pos)
 														<option value="{{$pos}}" @if($pos == Request::get('position_held')) selected @endif >{{$pos}}</option>
 												@endforeach
 													</select>

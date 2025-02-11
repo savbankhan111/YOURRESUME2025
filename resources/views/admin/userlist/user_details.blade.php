@@ -1,31 +1,27 @@
 @extends('layouts.auth')
 
-
-
-@if($user->roles[0]->id == 1) 
-
-
-	@section('page_title','Student Details')
+@if($user->roles[0]->id == 1)
+    @section('page_title', 'Student Details')
     @section('page_name', "Student Detail")
     @section('page_link1', url("admin/dashboard"))
     @section('page_name1', "Dashboard")
 
-    @if($user->student->school->school_type == 'direct')  
-    @section('page_link2', url("admin/users-list/student"))
-    @section('page_name2', "List of Student")
-@else
-    @section('page_link2', url("admin/users-list/non-student"))
-    @section('page_name2', "List of Non-Student")
+    @if(optional($user->student->school)->school_type == 'direct')
+        @section('page_link2', url("admin/users-list/student"))
+        @section('page_name2', "List of Student")
+    @else
+        @section('page_link2', url("admin/users-list/non-student"))
+        @section('page_name2', "List of Non-Student")
+    @endif
+@elseif($user->roles[0]->id == 3)
+    @section('page_title', 'Professional Details')
+    @section('page_name', "Professional Detail")
+    @section('page_link1', url("admin/dashboard"))
+    @section('page_name1', "Dashboard")
+    @section('page_link2', url("admin/users-list/professional"))
+    @section('page_name2', "List of Professional")
 @endif
 
-
-@else 
-@section('page_title','Professional Details')  
-@section('page_link1',url("admin/dashboard"))
-@section('page_name1',"Dashboard")
-@section('page_link2',url("admin/users-list/professional"))
-@section('page_name2',"List of Professional")
-@endif
 @section('content')
     <!-- Container fluid  -->
     <!-- ============================================================== -->
@@ -34,14 +30,14 @@
 		 @if($user->image)
 											<div class="imgwraps">  <img width="200" height="200" src="{{url('public/uploads/profile/'.$user->image)}}" alt="">	 </div>
 											 @else
-                                             <div class="imgwraps">  <img width="200" height="200" src="{{url('/images/user-default.png')}}" alt="">	</div> 
+                                             <div class="imgwraps">  <img width="200" height="200" src="{{url('')}}" alt="">	</div> 
 											 @endif	
 
                                              <div class="btnwraps">
 
-											  <a class="btn btntheme" href="{{route("admin.editStudent", $user->id)}}">Edit</a>										    
+											  <a class="btn btntheme" href="{{route("admin.userEdit", $user->id)}}">Edit</a>										    
 										    @if($user->status != 'deactivate')
-											   <a class="btn btn-danger" href="{{route("admin.changeUserStatuss", $user->id)}}" onclick="return confirm('Are you sure?')" ><i class="fa fa-times"></i></a>
+											   <a class="btn btn-danger" href="{{route("admin.changeUserStatuss", $user->id)}}" onclick="return confirm('Are you sure?')" ><i class="fa fa-trash-o"></i></a>
 									         
                                                @endif	
                                                </div>										 
@@ -122,6 +118,8 @@
  
 			<div class="card">
 		@if($user->roles[0]->id == 1)
+
+       
             <!-- student-->
              <div class="card-header bg-blue">
                 <h5 class="card-title">Student Profile</h5>
@@ -152,12 +150,13 @@
 					 <td>{{$user->student->school_name}}</td>
 					@endif	
 					<td>
+                    
 					 @if($user->student->school_proff_id)
 					  <img width="100" height="100" src="{{url('public/uploads/profile/'.$user->student->school_proff_id)}}" alt="">
 					 @endif
 					</td>
                 </tr>
-
+                
                 </tbody>
             </table>
         </div>     

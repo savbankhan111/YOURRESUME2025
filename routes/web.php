@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
 	return view('welcome');
 });
+
+Route::get('email-temp', function () {
+	return view('emails.verify_otp');
+});
 Route::get('phpinfo', function () {
 	phpinfo();
 });
@@ -175,7 +179,7 @@ Route::name('employer.')->group(function(){
 		Route::get("applications/{job_id}","EmployerController@applications")->name("applications");
 		Route::get("applications-all","EmployerController@applications_all")->name("applications_all");
 	    
-	    Route::get("/user-job-data/{user_id}/{job_id}", "EmployerController@jobUserDetails")->name("jobUserDetails");
+	    Route::get("/user-job-data/{user_id}", "EmployerController@jobUserDetails")->name("jobUserDetails");
 	    
 	    Route::post("/add-user-in-project", "EmployerController@addUserInProject")->name("addUserInProject");
 
@@ -194,7 +198,7 @@ Route::get("/interview-delete/{index}/{day}","Manager\ManagerController@intervie
 Route::patch("/interview-update/{index}/{day}","Manager\ManagerController@interviewSlotUpdate")->name("interviewSlotUpdate");
 Route::post("/interview-store","Manager\ManagerController@interviewSlotStore")->name("interviewSlotStore");
 Route::get("/interview-list","Manager\ManagerController@getInterviewerList")->name("getInterviewerList");
-Route::put("ivideo-update/{id}", 'Manager\ManagerController@updateIVideo')->name('updateIVideo');
+Route::post("ivideo-update/{id}", 'Manager\ManagerController@updateIVideo')->name('updateIVideo');
 Route::post("/change-isb-status/{id}", 'Manager\ManagerController@changeISBStatus')->name("changeISBStatus");
 Route::get("/interview/{id}","Manager\ManagerController@getInterview")->name("getInterview");
 Route::get("/change_password", 'Manager\ManagerController@change_password')->name("change_password");

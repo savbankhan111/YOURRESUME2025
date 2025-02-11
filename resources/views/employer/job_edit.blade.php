@@ -1,7 +1,10 @@
 @extends('layouts.all.crm')
 @section('page_title',"Job Edit")
-@section('page_name',"Job List")
-@section('page_link',route("employer.jobListBy"))
+@section('page_name1',"Dashboard")
+@section('page_link1',route("employer.dashbords"))
+
+@section('page_name2',"Job List")
+@section('page_link2',route("employer.jobListBy"))
 @section('content')
     <link rel="stylesheet" href="{{ asset('public/css/bootstrap-tagsinput.css')}}">
 	<link rel="stylesheet" href="{{ asset('public/css/app-tags.css')}}">

@@ -21,6 +21,7 @@ use phpDocumentor\Reflection\Types\Null_;
 use Illuminate\Support\Facades\Lang;
 use Vimeo\Laravel\Facades\Vimeo;
 use Illuminate\Support\Facades\File; 
+use Illuminate\Support\Facades\Storage;
 
 class ManagerController extends Controller
 {
@@ -181,78 +182,146 @@ class ManagerController extends Controller
         return view("manager.single_interview", compact("interviewerUser"));
     }
 	
-	public function updateIVideo(Request $request,$id)
-    {
-        $slot = InterviewerSlotsBooked::where('id', $id)->where('manager_id', Auth::id())->first();
+// 	public function updateIVideo(Request $request,$id)
+//     {
+//         $slot = InterviewerSlotsBooked::where('id', $id)->where('manager_id', Auth::id())->first();
         
-          $u = User::where("id", $slot->user_id)->first();
-           $points = ($u->point - $slot->point) + $request->point;
+//           $u = User::where("id", $slot->user_id)->first();
+//            $points = ($u->point - $slot->point) + $request->point;
            
-            $u->update(["point" => $points]);
-			$videos="";
+//             $u->update(["point" => $points]);
+// 			$videos="";
 			
 			
 			
 			
-			/*if(!empty($request->video)){			
+// 			/*if(!empty($request->video)){			
             
-            $fileFinalName = 'job_'.time().rand(1111,9999).'.'.$request->file('video')->getClientOriginalExtension();
-            $path = 'public/images/';
-            $request->file('video')->move($path, $fileFinalName);
-            $videos = $path.$fileFinalName;
-         }	
+//             $fileFinalName = 'job_'.time().rand(1111,9999).'.'.$request->file('video')->getClientOriginalExtension();
+//             $path = 'public/images/';
+//             $request->file('video')->move($path, $fileFinalName);
+//             $videos = $path.$fileFinalName;
+//          }	
 			
-     $videolink=   Vimeo::connection('main')->upload($videos);
+//      $videolink=   Vimeo::connection('main')->upload($videos);
        
       
-        File::delete($videos);*/
-	$response="";
-	if(!empty($request->video)){
+//         File::delete($videos);*/
+// 	$response="";
+// 	if(!empty($request->video)){
 	
-	$curl = curl_init();
-	curl_setopt_array($curl, array(
-	  CURLOPT_URL => 'https://s3-api.bles-software.com/?&',
-	  CURLOPT_RETURNTRANSFER => true,
-	  CURLOPT_ENCODING => '',
-	  CURLOPT_MAXREDIRS => 10,
-	  CURLOPT_TIMEOUT => 0,
-	  CURLOPT_FOLLOWLOCATION => true,
-	  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-	  CURLOPT_CUSTOMREQUEST => 'POST',
-	  CURLOPT_POSTFIELDS => array('file'=> new \CurlFile($request->file('video'), 'video/mp4', $id.'.mp4')),
-	));
+// 	$curl = curl_init();
+// 	curl_setopt_array($curl, array(
+// 	  CURLOPT_URL => 'https://s3-api.bles-software.com/?&',
+// 	  CURLOPT_RETURNTRANSFER => true,
+// 	  CURLOPT_ENCODING => '',
+// 	  CURLOPT_MAXREDIRS => 10,
+// 	  CURLOPT_TIMEOUT => 0,
+// 	  CURLOPT_FOLLOWLOCATION => true,
+// 	  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+// 	  CURLOPT_CUSTOMREQUEST => 'POST',
+// 	  CURLOPT_POSTFIELDS => array('file'=> new \CurlFile($request->file('video'), 'video/mp4', $id.'.mp4')),
+// 	));
+    
 
-	$response = curl_exec($curl);
+// 	$response = curl_exec($curl);
 
-	curl_close($curl);
+// 	curl_close($curl);
 	
-	$curl2 = curl_init();
-	curl_setopt_array($curl2, array(
-	  CURLOPT_URL => 'https://vimeo-api.bles-software.com/?&',
-	  CURLOPT_RETURNTRANSFER => true,
-	  CURLOPT_ENCODING => '',
-	  CURLOPT_MAXREDIRS => 10,
-	  CURLOPT_TIMEOUT => 0,
-	  CURLOPT_FOLLOWLOCATION => true,
-	  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-	  CURLOPT_CUSTOMREQUEST => 'POST',
-	  CURLOPT_POSTFIELDS => array('file'=> new \CurlFile($request->file('video'), 'video/mp4', $id.'.mp4')),
-	));
+// 	$curl2 = curl_init();
+// 	curl_setopt_array($curl2, array(
+// 	  CURLOPT_URL => 'https://vimeo-api.bles-software.com/?&',
+// 	  CURLOPT_RETURNTRANSFER => true,
+// 	  CURLOPT_ENCODING => '',
+// 	  CURLOPT_MAXREDIRS => 10,
+// 	  CURLOPT_TIMEOUT => 0,
+// 	  CURLOPT_FOLLOWLOCATION => true,
+// 	  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+// 	  CURLOPT_CUSTOMREQUEST => 'POST',
+// 	  CURLOPT_POSTFIELDS => array('file'=> new \CurlFile($request->file('video'), 'video/mp4', $id.'.mp4')),
+// 	));
 
-	$sdsds = curl_exec($curl2);
-$vimeoresponse=json_decode($sdsds);
-	curl_close($curl2);
-		}
-//'https://vimeo.com/manage'.$videolink
-		$slot->update([
-            "video" => $response,
-			"admin_feedback" => $request['admin_feedback'],
-			"point" => $request['point'],
-			"vimeo" => $vimeoresponse->vimeo_video_id
-        ]);
-       return redirect()->back()->with('success', 'Successfully Updated');
+// 	$sdsds = curl_exec($curl2);
+// $vimeoresponse=json_decode($sdsds);
+// 	curl_close($curl2);
+// 		}
+// //'https://vimeo.com/manage'.$videolink
+// 		$slot->update([
+//             "video" => $response,
+// 			"admin_feedback" => $request['admin_feedback'],
+// 			"point" => $request['point'],
+// 			"vimeo" => $vimeoresponse->vimeo_video_id
+//         ]);
+//        return redirect()->back()->with('success', 'Successfully Updated');
+//     }
+	
+
+
+public function updateIVideo(Request $request, $id)
+{
+    $slot = InterviewerSlotsBooked::where('id', $id)->where('manager_id', Auth::id())->first();
+    
+    $u = User::where("id", $slot->user_id)->first();
+    $points = ($u->point - $slot->point) + $request->point;
+    $u->update(["point" => $points]);
+
+    $response = "";
+    $vimeoresponse = "";
+
+    if (!empty($request->video)) {
+        // Define S3 bucket details from .env
+        $bucket = env('AWS_BUCKET');
+        $region = env('AWS_DEFAULT_REGION');
+        $accessKey = env('AWS_ACCESS_KEY_ID');
+        $secretKey = env('AWS_SECRET_ACCESS_KEY');
+
+        // Generate a unique file name for the video
+        $fileName = 'job_' . time() . rand(1111, 9999) . '.mp4';
+        $filePath = $request->file('video')->getPathname();
+
+        // Upload to S3 with 'public-read' or 'private' ACL
+        $s3Response = Storage::disk('s3')->putFileAs(
+            'videos', // You can change this to the folder path within your bucket if needed
+            $request->file('video'),
+            $fileName,
+            [
+                'visibility' => 'public' // Use 'public' for public-read access or 'private' for private
+            ]
+        );
+
+        // Get the URL of the uploaded file
+        $response = Storage::disk('s3')->url($fileName);
+
+        // Upload to Vimeo
+        $curl2 = curl_init();
+        curl_setopt_array($curl2, array(
+            CURLOPT_URL => 'https://vimeo-api.bles-software.com/?&',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS => array('file' => new \CurlFile($filePath, 'video/mp4', $fileName)),
+        ));
+
+        $sdsds = curl_exec($curl2);
+        $vimeoresponse = json_decode($sdsds);
+        curl_close($curl2);
     }
-	
+
+    $slot->update([
+        "video" => $response,
+        "admin_feedback" => $request['admin_feedback'],
+        "point" => $request['point'],
+        "vimeo" => $vimeoresponse->vimeo_video_id ?? null
+    ]);
+
+    return redirect()->back()->with('success', 'Successfully Updated');
+}
+
+
 	public function changeISBStatus(Request $request, $id)
     {
         $rec =  InterviewerSlotsBooked::find($id);

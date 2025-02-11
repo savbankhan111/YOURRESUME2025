@@ -129,7 +129,7 @@
 										    @endif
 										    
 										    @if($cand->status != 'deactivate')
-											   <a class="btn btn-danger" href="{{route("admin.changeUserStatuss", $cand->id)}}" onclick="return confirm('Are you sure?')" ><i class="fa fa-times"></i></a>
+											   <a class="btn btn-danger" href="{{route("admin.changeUserStatuss", $cand->id)}}" onclick="return confirm('Are you sure?')" ><i class="fa fa-trash-o"></i></a>
 									            @endif
 										    
 												  {{-- <a class="btn btntheme" href="{{route("admin.userDelete", $cand->id)}}" onclick="return confirm('Are you sure?')">Delete</a>--}}

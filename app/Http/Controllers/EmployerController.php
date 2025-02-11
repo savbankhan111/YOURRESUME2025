@@ -221,18 +221,32 @@ class EmployerController extends Controller{
     
     
     
-      public function applications(Request $request, $job_id)
+    public function applications(Request $request, $job_id)
     {
-        $apps = Job::where("id", $job_id)->first();
-       $applications = $apps->users()->filter($request->all())->paginate(20);;
-       $projects = Project::where("created_by", Auth::id())->get();
-
-        $skiils = SkillField::where("job_id", $apps->id)->with("skillData")->get();
-       $langs = Language::all();
-
-       return view("employer/applications_list")
-            ->with(['apps'=> $applications, "job_id" => $job_id,"projects" => $projects, "langs" => $langs, "skills" => $skiils]);
+        // Retrieve job with users relation
+        $job = Job::findOrFail($job_id);
+    
+        // Fetch paginated applications with filters
+        $applications = $job->users()->filter($request->all())->paginate(20);
+    
+        // Fetch projects created by the authenticated user
+        $projects = Project::where("created_by", Auth::id())->get();
+    
+        // Fetch skills associated with the job
+        $skills = SkillField::where("job_id", $job->id)->with("skillData")->get();
+    
+        // Fetch all languages
+        $langs = Language::all();
+    
+        return view("employer/applications_list", [
+            'apps' => $applications,
+            'job_id' => $job_id,
+            'projects' => $projects,
+            'langs' => $langs,
+            'skills' => $skills
+        ]);
     }
+    
 
 
     public function addUserInProject(Request $request)

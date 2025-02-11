@@ -17,7 +17,7 @@
                 <b class="logo-icon p-l-10">
                     <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                     <!-- Dark Logo icon -->
-                    <img src="{{ asset('images/RESUMELOGO.png')}}" alt="homepage" class="light-logo" style="width:60px"/>
+                    <img src="{{ asset('images/RESUMELOGO.png')}}" alt="" class="light-logo" style="width:60px"/>
 
                 </b>
                 <!--End Logo icon -->
@@ -25,7 +25,7 @@
                 <!-- <b class="logo-icon"> -->
                 <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                 <!-- Dark Logo icon -->
-            <!-- <img src="{{ asset('public/images/logo-text.png')}}" alt="homepage" class="light-logo" /> -->
+            <!-- <img src="{{ asset('public/images/logo-text.png')}}" alt="" class="light-logo" /> -->
 
                 <!-- </b> -->
                 <!--End Logo icon -->

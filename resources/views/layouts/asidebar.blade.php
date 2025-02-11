@@ -196,7 +196,7 @@
                         <ul
                             class="sidebar-item {{ Request::routeIs('admin.plans') && Request::get('status') == 'deactivate' ? 'selected' : '' }}">
                             <a href="{{ route('admin.plans', ['status' => 'deactivate']) }}" class="sidebar-link">
-                                {{-- <i class="fa fa-times-circle"></i> --}}
+                                {{-- <i class="fa fa-trash-o-circle"></i> --}}
                                 <span class="hide-menu"> Deactivated Plans</span>
                             </a>
                         </ul>

@@ -1,7 +1,11 @@
 @extends('layouts.all.crm')
 @section('page_title','Job Detail')
-@section('page_name',"Job List")
-@section('page_link',route("employer.jobListBy"))
+
+@section('page_name1',"Dashboard")
+@section('page_link1',route("employer.dashbords"))
+
+@section('page_name2',"Job List")
+@section('page_link2',route("employer.jobListBy"))
 @section('content')
     <!-- Container fluid  -->
     <!-- ============================================================== -->
