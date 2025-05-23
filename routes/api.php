@@ -19,6 +19,11 @@ Route::group(["prefix" => "auth"], function () {
     Route::post('logout', 'ApiAuth\SignInController@logout');
 });
 Route::post("register/professional", "ApiAuth\RegisterController@registerProfessional");
+
+Route::post("professional/update", "ApiAuth\RegisterController@updateProfessional");
+
+// Route::post("student/update", "ApiAuth\RegisterController@updateStudent");
+
 Route::post("register/student", "ApiAuth\RegisterController@registerStudent");
 Route::post("verify/{type}", "ApiAuth\RegisterController@verify");
 Route::post('resend-mail-verify', 'ApiAuth\SignInController@resendMailVerify');
@@ -32,6 +37,8 @@ Route::post("info-by-code", "Api\ProfileController@infoByCode");
 Route::post("update-user/lat-lng", "Api\ProfileController@updateLatLg");*/
 Route::get("states", "Api\ProfileController@states");
 Route::get("school-by-state/{state}", "Api\ProfileController@SchoolByState");
+Route::get("non-school-by-state/{state}", "Api\ProfileController@NonSchoolByState");
+
 
 Route::post("/upload-document/{user_id}", "Api\ProfileController@uploadDocument");
 Route::get("/lang-docs-appoit/{user_id}", "Api\ProfileController@lanApointDocs")->name("lanApointDocs");
@@ -73,13 +80,18 @@ Route::post("profile-image-upload/{user_id}", "Api\ProfileController@profileImag
 
 
 
-Route::put("resume-update/{user_id}","Api\ProfileController@updateUserResume");
+Route::post("resume-update/{user_id}","Api\ProfileController@updateUserResume");
 Route::get("receive-notification/{user}", "Api\AlertController@receiveNotification");
 /*Route::post("school-search", "Api\ProfileController@schoolSearch");
 Route::post("user-act_deact", "Api\ProfileController@userActDeact");
 Route::get("/chat/{alert_id}", 'Api\ChatController@messageList')->name("chat");
 */
-Route::group(["prefix" => "auth", "middleware" => "auth:api"], function () {
-    Route::get("me", "ApiAuth\SignInController@me");
+Route::post("me", "ApiAuth\SignInController@me");
+
+Route::group(["auth:api"], function () {
+    
     Route::get("test", "ApiAuth\SignInController@test");
 });
+
+Route::get("getgenerateClientToken", "PaymentController@generateClientToken");
+Route::post('process-payment', 'PaymentController@processPayment');
